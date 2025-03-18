@@ -1,0 +1,33 @@
+<html>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      
+        <label>
+          <input type="checkbox" id="terms" name="terms" required>
+          I agree to the terms
+        </label>
+      
+        <button type="submit">Submit</button>
+      </form>
+      
+      <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        if (!document.getElementById('name').value.trim()) {
+          alert('Please enter your name.');
+          event.preventDefault();
+        }
+        if (!document.getElementById('email').value.trim()) {
+          alert('Please enter a valid email.');
+          event.preventDefault();
+        }
+        if (!document.getElementById('terms').checked) {
+          alert('You must agree to the terms.');
+          event.preventDefault();
+        }
+      });
+      </script>
+</html>
